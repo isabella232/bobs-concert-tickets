@@ -2,7 +2,7 @@
 
 import os
 
-PROJECT_NAME = 'superzoom'
+PROJECT_NAME = 'bobs-concert-tickets'
 DEPLOYED_NAME = PROJECT_NAME 
 
 PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
