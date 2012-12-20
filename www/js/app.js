@@ -1,14 +1,14 @@
 $(function() {
-    var tiles = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
-        maxZoom: 2
-    });
-
     var superzoom = L.map('superzoom', {
-        center: [0, 0],
+        center: new L.LatLng(-1892, 1500),
         zoom: 1,
-        layers: [tiles],
-        minZoom: 0,
         maxZoom: 2,
+        maxBounds: new L.LatLngBounds(new L.LatLng(0, 0), new L.LatLng(-7595, 5463)),
         crs: L.CRS.Simple
     });
+
+    var tiles = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
+        continuousWorld: true,
+        noWrap: true
+    }).addTo(superzoom);
 });
