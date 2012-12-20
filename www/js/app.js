@@ -1,6 +1,7 @@
 $(function() {
-    // JST example
-    html = JST.example({ "name": "foobar" });
+    var map = L.map('superzoom').setView([0, 0], 1);
 
-    console.log(html);
+    L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
+        maxZoom: 2
+    }).addTo(map);
 });
