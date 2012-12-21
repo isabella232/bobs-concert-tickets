@@ -1,4 +1,6 @@
 $(function() {
+    var MAX_X = 5376 - 256;
+    var MAX_Y = 7424 - 256;
     var MIN_ZOOM = 0;
     var MAX_ZOOM = 2;
     var COORDINATE_MULTIPLIER = 1 / Math.pow(2, MAX_ZOOM - MIN_ZOOM);
@@ -15,7 +17,7 @@ $(function() {
         zoom: 2,
         minZoom: MIN_ZOOM,
         maxZoom: MAX_ZOOM,
-        maxBounds: new L.LatLngBounds(xy(0, 0), xy(5463 - 256, 7595)),
+        maxBounds: new L.LatLngBounds(xy(0, 0), xy(MAX_X, MAX_Y)),
         crs: L.CRS.Simple,
         zoomControl: false
     });
