@@ -40,8 +40,7 @@ $(function() {
         }
     });
 
-    $('#goto-rock').click(function() {
-        console.log('here');
-        superzoom.setView(xy(2249, 6929), 2);
+    $('#goto').click(function() {
+        superzoom.setView(xy(6597, 1083), 3);
     });
 });
