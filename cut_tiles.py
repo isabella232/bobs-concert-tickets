@@ -27,7 +27,7 @@ while zoom >= MIN_ZOOM:
         width = full_width / (2 ** (MAX_ZOOM - zoom))
         height = full_height / (2 ** (MAX_ZOOM - zoom))
 
-        image = full_image.resize((width, height))
+        image = full_image.resize((width, height), Image.ANTIALIAS)
 
     max_x = width + 256 - (width % TILE_WIDTH)
     max_y = height + 256 - (height % TILE_HEIGHT) 
