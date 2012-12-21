@@ -12,10 +12,10 @@ a:hover, a:active { color: #36c; }
 
 #nav { position:fixed; top:0; height:50px; width:100%; background-color:#333; z-index:2; color:white; }
 #nav a { color:#ccc; text-decoration:none; }
-#nav ul { margin:11px 0 12px 12px; padding:0; line-height:10px;}
-#nav ul li { float:left; list-style-type:none; margin-right:20px; }
-#nav ul li.npr { background: url('../img/npr.png') no-repeat center left; }
-#nav ul li.npr a { display: block; width: 55px; padding-left: 0; }
+#nav ul { margin:10px 0 12px 12px; padding:0; line-height:30px; }
+#nav ul li { float:left; list-style-type:none; line-height: 30px; margin-right:20px; }
+#nav ul li.npr { background: url('../img/npr_music.png') no-repeat center left; }
+#nav ul li.npr a { display: block; width: 109px; padding-left: 0; }
 #nav ul li.donate a { font-weight: bold; }
 
 // Map
@@ -23,7 +23,7 @@ a:hover, a:active { color: #36c; }
         
 p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-left:85px; margin: 13px; line-height: 15px; font-size: 13px; color: #999;}        
         
-#topper { position:fixed; top:40px; width:100%; z-index:2; background-color:#efefef; border-bottom:1px solid #999999; height:60px; color:#333; }
+#topper { position:fixed; top:50px; width:100%; z-index:2; background-color:#efefef; border-bottom:1px solid #999999; height:60px; color:#333; }
 #topper h1 { margin-left:10px; font-size:18px; line-height: 56px; font-family:Georgia, serif; }
 #topper #about { text-transform:uppercase; position:absolute; right:10px; top:8px; width:90px; height:40px; border:1px solid #999999; font-size:12px; line-height:13px; font-weight:bold; color:#777; }
 
@@ -119,10 +119,6 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 }
 
 @media (min-width: 650px) {
-    #nav { height: 50px; }
-    #topper { top:50px; }
-    #nav ul li.npr { background: url('../img/npr_55x38.jpg') }
-    #nav ul { margin:15px 0 15px 15px; font-size:14px; }
     #topper h1 { font-size:28px; line-height:56px; margin-left:15px; float:left; }
     #topper #about { width:150px; font-size:14px; }
 }
