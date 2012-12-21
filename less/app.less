@@ -17,15 +17,16 @@ a:hover, a:active { color: #36c; }
     .nav > li.donate > a { font-weight: bold; color: #ccc; }
 }
 
+.navbar-fixed-top .navbar-inner { padding-left: 20px; padding-right: 20px; }
+
+// Map
 #superzoom {cursor:default !important; /* wax interactivity changes the cursor, lets change it back */ }
         
 p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-left:85px; margin: 13px; line-height: 15px; font-size: 13px; color: #999;}        
         
 #topper { position:fixed; top:40px; width:100%; z-index:2; background-color:#efefef; border-bottom:1px solid #999999; height:60px; color:#333; }
-#topper.embedded { top:58px; }
-#topper h1 { margin-left:10px; font-size:18px; font-family:Georgia, serif; }
-#topper h2 { margin-left:10px; font-size:12px; font-weight:normal; line-height:6px; }
-#topper #about { text-transform:uppercase; position:absolute; right:10px; top:8px; width:80px; height:40px; border:1px solid #999999; font-size:12px; line-height:13px; font-weight:bold; color:#777; }
+#topper h1 { margin-left:10px; font-size:18px; line-height: 56px; font-family:Georgia, serif; }
+#topper #about { text-transform:uppercase; position:absolute; right:10px; top:8px; width:90px; height:40px; border:1px solid #999999; font-size:12px; line-height:13px; font-weight:bold; color:#777; }
 
 #legend {
     display:none;
@@ -108,23 +109,18 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 .leaflet-top {
     top: 123px;
     left: auto;
-}
 
-@media (max-width: 979px) {
-    .navbar-fixed-top .navbar-inner { padding-left: 20px; padding-right: 20px; }
+    .leaflet-control-zoom {
+        margin-top: 0px;
+    }
 }
 
 @media (max-width: 479px) {
-    #nav li.arts, #nav li.music { display:none; }
+    .nav li.news, .nav li.music { display:none; }
 }
 
 @media (min-width:650px) {
-    #nav { height: 50px; }
-    #topper { top:50px; }
-    #nav ul li.npr { background: url('../img/npr_55x38.jpg') }
-    #nav ul { margin:15px 0 15px 15px; font-size:14px; }
     #topper h1 { font-size:28px; line-height:56px; margin-left:15px; float:left; }
-    #topper h2 { font-size:14px; line-height:66px; margin-left:15px; float:left; }
     #topper #about { width:150px; font-size:14px; }
 }
 

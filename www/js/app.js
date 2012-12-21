@@ -19,7 +19,8 @@ $(function() {
         maxZoom: MAX_ZOOM,
         maxBounds: new L.LatLngBounds(xy(0, 0), xy(MAX_X, MAX_Y)),
         crs: L.CRS.Simple,
-        zoomControl: false
+        zoomControl: false,
+        attributionControl: false
     });
 
     var zoom_control = new L.Control.Zoom({
