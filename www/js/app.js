@@ -28,8 +28,7 @@ $(function() {
     }).addTo(superzoom);
 
     //var tiles = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
-    var tiles = L.tileLayer('http://{s}.npr.org/bobs-concert-tickets/img/tiles/{z}/{x}/{y}.png', {
-        subdomains: ['apps', 'apps2'],
+    var tiles = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
         continuousWorld: true,
         noWrap: true
     }).addTo(superzoom);
