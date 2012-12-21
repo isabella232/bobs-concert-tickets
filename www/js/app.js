@@ -16,8 +16,13 @@ $(function() {
         minZoom: MIN_ZOOM,
         maxZoom: MAX_ZOOM,
         maxBounds: new L.LatLngBounds(xy(0, 0), xy(5463 - 256, 7595)),
-        crs: L.CRS.Simple
+        crs: L.CRS.Simple,
+        zoomControl: false
     });
+
+    var zoom_control = new L.Control.Zoom({
+        position: 'topright'
+    }).addTo(superzoom);
 
     var tiles = L.tileLayer('img/tiles/{z}/{x}/{y}.png', {
         continuousWorld: true,
