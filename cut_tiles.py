@@ -6,39 +6,65 @@ from PIL import Image
 
 TILE_WIDTH = 256
 TILE_HEIGHT = 256
-ZOOM = 1
+MIN_ZOOM = 0 
+MAX_ZOOM = 2
 
+# Open original image
 full_image = Image.open('data/full.jpg')
-width, height = full_image.size
+full_width, full_height = full_image.size
 
-x = 0
-y = 0
+# Compute area evenly divisble into tiles
+max_x = full_width - (full_width % TILE_WIDTH)
+max_y = full_height - (full_height % TILE_HEIGHT)
 
-max_x = width - (width % TILE_WIDTH)
-max_y = height - (height % TILE_HEIGHT) 
+# Crop image to nearest region evenly divisible into tiles
+full_image = full_image.crop((0, 0, max_x, max_y))
+full_width, full_height = full_image.size
 
-while x < max_x:
-    tile_x = x / TILE_WIDTH
+zoom = MAX_ZOOM 
+
+while zoom >= MIN_ZOOM:
+    # Max zoom level is pixel-perfect
+    if zoom == MAX_ZOOM:
+        image = full_image
+
+        width = full_width
+        height = full_height
+    # Other zoom levels are downsampled
+    else:
+        width = full_width / (2 ** (MAX_ZOOM - zoom))
+        height = full_height / (2 ** (MAX_ZOOM - zoom))
+
+        image = full_image.resize((width, height))
+
+    max_x = width - (width % TILE_WIDTH)
+    max_y = height - (height % TILE_HEIGHT) 
     
-    y = 0
-    
-    while y < max_y:
-        tile_y = y / TILE_HEIGHT
+    x = 0
 
-        tile = full_image.crop((x, y, x + TILE_WIDTH, y + TILE_HEIGHT))
+    while x < max_x:
+        tile_x = x / TILE_WIDTH 
+        
+        y = 0
+        
+        while y < max_y:
+            tile_y = y / TILE_HEIGHT
 
-        folder = 'www/img/tiles/%i/%i/' % (ZOOM, tile_x)
+            tile = image.crop((x, y, x + TILE_WIDTH, y + TILE_HEIGHT))
 
-        if not os.path.exists(folder):
-            os.makedirs(folder)
+            folder = 'www/img/tiles/%i/%i/' % (zoom, tile_x)
 
-        path = os.path.join(folder, '%i.png' % tile_y)
+            if not os.path.exists(folder):
+                os.makedirs(folder)
 
-        print path
+            path = os.path.join(folder, '%i.png' % tile_y)
 
-        tile.save(path, 'PNG')
+            print path
 
-        y += TILE_HEIGHT
-    
-    x += TILE_WIDTH
+            tile.save(path, 'PNG')
 
+            y += TILE_HEIGHT
+        
+        x += TILE_WIDTH
+
+    zoom -= 1
