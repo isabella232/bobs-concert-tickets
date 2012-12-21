@@ -7,18 +7,10 @@ from PIL import Image
 TILE_WIDTH = 256
 TILE_HEIGHT = 256
 MIN_ZOOM = 0 
-MAX_ZOOM = 2
+MAX_ZOOM = 4
 
 # Open original image
 full_image = Image.open('data/full.jpg')
-full_width, full_height = full_image.size
-
-# Compute area evenly divisble into tiles
-max_x = full_width - (full_width % TILE_WIDTH)
-max_y = full_height - (full_height % TILE_HEIGHT)
-
-# Crop image to nearest region evenly divisible into tiles
-full_image = full_image.crop((0, 0, max_x, max_y))
 full_width, full_height = full_image.size
 
 zoom = MAX_ZOOM 
@@ -37,8 +29,8 @@ while zoom >= MIN_ZOOM:
 
         image = full_image.resize((width, height))
 
-    max_x = width - (width % TILE_WIDTH)
-    max_y = height - (height % TILE_HEIGHT) 
+    max_x = width + 256 - (width % TILE_WIDTH)
+    max_y = height + 256 - (height % TILE_HEIGHT) 
     
     x = 0
 

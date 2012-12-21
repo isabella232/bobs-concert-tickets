@@ -1,8 +1,8 @@
 $(function() {
-    var MAX_X = 5376;
-    var MAX_Y = 7424;
+    var MAX_X = 8550;
+    var MAX_Y = 5768;
     var MIN_ZOOM = 0;
-    var MAX_ZOOM = 2;
+    var MAX_ZOOM = 4;
     var COORDINATE_MULTIPLIER = 1 / Math.pow(2, MAX_ZOOM - MIN_ZOOM);
 
     function xy(x, y) {
@@ -13,8 +13,8 @@ $(function() {
     }
 
     var superzoom = L.map('superzoom', {
-        center: xy(1196, 2531),
-        zoom: 2,
+        center: xy(4275, 2884),
+        zoom: MIN_ZOOM,
         minZoom: MIN_ZOOM,
         maxZoom: MAX_ZOOM,
         maxBounds: new L.LatLngBounds(xy(0, 0), xy(MAX_X, MAX_Y)),
