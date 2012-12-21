@@ -91,7 +91,7 @@ Generating the tiles
 
 The source image and tiles are not stored in the repository. **Please do not commit them.** To cut the tiles:
 
-* Download the source image from Dropbox and save it as ``data/full.jpg``
+* Download the source image from Dropbox and save it as ``data/full.png``
 * Run ``python cut_tiles.py``
 
 Run the project locally
