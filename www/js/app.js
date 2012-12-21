@@ -1,6 +1,6 @@
 $(function() {
-    var MAX_X = 5376 - 256;
-    var MAX_Y = 7424 - 256;
+    var MAX_X = 5376;
+    var MAX_Y = 7424;
     var MIN_ZOOM = 0;
     var MAX_ZOOM = 2;
     var COORDINATE_MULTIPLIER = 1 / Math.pow(2, MAX_ZOOM - MIN_ZOOM);
@@ -32,11 +32,16 @@ $(function() {
         noWrap: true
     }).addTo(superzoom);
 
-    $("#about").click(function(){
-        if($(".modal-body").children().length < 1 ) {
-            $(".modal h3").text($(".legend-contents .headline").text());
-            $(".legend-contents .headline").hide();
-            $(".legend-contents").clone().appendTo(".modal-body");
+    $('#about').click(function(){
+        if($('.modal-body').children().length < 1 ) {
+            $('.modal h3').text($('.legend-contents .headline').text());
+            $('.legend-contents .headline').hide();
+            $('.legend-contents').clone().appendTo('.modal-body');
         }
+    });
+
+    $('#goto-rock').click(function() {
+        console.log('here');
+        superzoom.setView(xy(2249, 6929), 2);
     });
 });
