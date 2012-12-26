@@ -10,13 +10,29 @@ h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; margin: 0 0 12px 0; line-h
 a, a:link, a:visited { color: #000; }
 a:hover, a:active { color: #36c; }
 
-#nav { position:fixed; top:0; height:50px; width:100%; background-color:#333; z-index:2; color:white; }
-#nav a { color:#ccc; text-decoration:none; }
-#nav ul { margin:10px 0 12px 12px; padding:0; line-height:30px; }
-#nav ul li { float:left; list-style-type:none; line-height: 30px; margin-right:20px; }
-#nav ul li.npr { background: url('../img/npr_music.png') no-repeat center left; }
-#nav ul li.npr a { display: block; width: 109px; padding-left: 0; }
-#nav ul li.donate a { font-weight: bold; }
+#nav {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: #333;
+    z-index: 2;
+    color: white;
+
+    li a,li span { color: #ccc; text-decoration: none; }
+    ul { margin: 10px 0 12px 12px; padding: 0; line-height: 30px; }
+    .site-links li { float: left; list-style-type: none; line-height: 30px; margin-right: 20px; }
+    .site-links .npr { background: url('../img/npr_music.png') no-repeat center left; }
+    .site-links li.npr a { display: block; width: 109px; padding-left: 0; }
+    .site-links li.donate a { font-weight: bold; }
+
+    ul.social-links {  position: absolute; right: 0; top: 0; }
+    .social-links span { margin-right: 20px; }
+    .social-links li { float: left; list-style-type: none; line-height: 30px; }
+    .social-links a { margin-top: 5px; display: block; height: 50px; width: 45px; text-indent: -999em; background: url('http://media.npr.org/chrome/music/social_tools_sprite.png') no-repeat; }
+    .social-links .twitter a { background-position: 0px -115px; }
+}
+
 
 // Map
 #superzoom { background-color: #000; }
@@ -115,7 +131,7 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 }
 
 @media (max-width: 479px) {
-    #nav li.arts, #nav li.music { display:none; }
+    #nav li.news,#nav li.music,#nav li.donate { display:none; }
 }
 
 @media (min-width: 650px) {
