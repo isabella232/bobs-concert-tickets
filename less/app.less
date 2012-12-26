@@ -16,7 +16,7 @@ a:hover, a:active { color: #36c; }
     height: 40px;
     width: 100%;
     background-color: #444D58;
-    z-index: 2;
+    z-index: 999;
     color: white;
     font-size:12px;
     font-weight: bold;
@@ -55,7 +55,7 @@ a:hover, a:active { color: #36c; }
         
 p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-left:85px; margin: 13px; line-height: 15px; font-size: 13px; color: #999;}        
         
-#topper { position:fixed; top:44px; width:100%; z-index:2; background-color:white; border-bottom:2px solid #E0E0E0; height:46px; color:#333; }
+#topper { position:fixed; top:44px; width:100%; z-index:999; background-color:white; border-bottom:2px solid #E0E0E0; height:46px; color:#333; }
 #topper h1 { margin-left:10px; font-size:22px; line-height: 48px; font-family:Georgia, serif; font-weight:normal; }
 #topper #about {
     position:absolute;
@@ -75,7 +75,7 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 #legend {
     display:none;
     position:absolute;
-    z-index:2;
+    z-index:999;
     left: 15px;
     top: 54px;
     padding:15px 15px 3px 15px;
@@ -151,6 +151,7 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 
 @media (max-width: 479px) {
     #nav li.news,#nav li.music,#nav li.donate { display:none; }
+    #nav li span { display:none; }
 }
 
 @media (min-width: 650px) {
