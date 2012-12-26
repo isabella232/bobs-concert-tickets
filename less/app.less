@@ -5,7 +5,7 @@
 // General styles
 html, body, #superzoom { height: 100%; }
 
-body { font: 13px/1.35em Helvetica, Arial, sans-serif; color: #333; margin:0; }
+body { font: 13px/1.35em Helvetica, Arial, sans-serif; color: #333; }
 
 h1, h2, h3, h4, h5, h6 { font-family: Georgia, serif; margin: 0 0 12px 0; line-height: 1.35em; }
 a, a:link, a:visited { color: #000; }
@@ -29,7 +29,7 @@ a:hover, a:active { color: #36c; }
     ul.site-links li.npr a img {
         width:120px;
         height:32px;
-        margin:6px 20px 0 12px;
+        margin:6px 20px 0 18px;
         &:hover { opacity: .7; }
     }
     
@@ -87,14 +87,11 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 #legend {
     position:absolute;
     z-index:999;
-    left: 12px;
-    top: 56px;
+    left: 18px;
+    top: 63px;
     padding:15px 15px 3px 15px;
     width: 240px;
-    background-color: #fff;
-    background: rgba(255,255,255,.97);
-    opacity: .97;
-    filter:alpha(opacity=97);
+    background-color:white;
     border:2px solid #E0E0E0;
 }
 
@@ -104,7 +101,6 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
         font-size: 32px;
         font-family: Georgia, serif;
         line-height: 36px;
-        margin:0 0 12px;
         color: #222;
     }
     a { 
@@ -168,14 +164,44 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 }
 
 .leaflet-top {
-    top: 56px;
+    top: 63px;
     left: auto;
+
+    .leaflet-control {
+        margin-right: 21px;
+    }
+    
     .leaflet-control-zoom {
         margin-top: 0px;
+        box-shadow: none;
+        border: 2px solid #E0E0E0;
+        -webkit-border-radius: 0;
+                border-radius: 0;
+        }
+    .leaflet-control-zoom a {
+        width: 44px;
+        height: 44px;
+        line-height:44px;
+        background-color: white;
+        text-align: center;
+        text-decoration: none;
+        color:#222;
     }
-    .leaflet-control {
-        margin-right: 12px;
+    .leaflet-control-zoom-in {
+        border-bottom: 2px solid #E0E0E0;
+        font: bold 22px/24px Arial, Helvetica, sans-serif;
+        -webkit-border-radius:0;
+                border-radius:0;
     }
+    .leaflet-control-zoom-out {
+        font: bold 23px/20px Tahoma, Verdana, sans-serif;
+        -webkit-border-radius:0;
+                border-radius:0;
+    }
+    .leaflet-control-zoom a.leaflet-control-zoom-disabled {
+        cursor: default;
+        color: #E0E0E0;
+        }
 }
 
 @media (max-width: 479px) {
