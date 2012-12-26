@@ -59,8 +59,8 @@ $(function() {
     $('#about').click(function(){
         if($('.modal-body').children().length < 1 ) {
             $('.modal h3').text($('.legend-contents .headline').text());
-            $('.legend-contents .headline').hide();
             $('.legend-contents').clone().appendTo('.modal-body');
+            $('.modal-body .legend-contents .headline').hide();
         }
     });
 
