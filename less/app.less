@@ -53,9 +53,19 @@ a:hover, a:active { color: #36c; }
 // Map
 #superzoom { background-color: #000; }
         
-p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-left:85px; margin: 13px; line-height: 15px; font-size: 13px; color: #999;}        
+p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-left:85px; margin: 13px; line-height: 15px; font-size: 13px; color: #999;}
         
-#topper { position:fixed; top:44px; width:100%; z-index:999; background-color:white; border-bottom:2px solid #E0E0E0; height:46px; color:#333; }
+#topper {
+    display:none;
+    position:fixed;
+    top:40px;
+    width:100%;
+    z-index:999;
+    background-color:white;
+    border-bottom:2px solid #E0E0E0;
+    height:46px;
+    color:#333;
+}
 #topper h1 { margin-left:10px; font-size:22px; line-height: 48px; font-family:Georgia, serif; font-weight:normal; }
 #topper #about {
     position:absolute;
@@ -73,10 +83,9 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 }
 
 #legend {
-    display:none;
     position:absolute;
     z-index:999;
-    left: 15px;
+    left: 12px;
     top: 54px;
     padding:15px 15px 3px 15px;
     width: 240px;
@@ -141,11 +150,13 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 }
 
 .leaflet-top {
-    top: 123px;
+    top: 54px;
     left: auto;
-
     .leaflet-control-zoom {
         margin-top: 0px;
+    }
+    .leaflet-control {
+        margin-right: 12px;
     }
 }
 
@@ -156,10 +167,11 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 
 @media (min-width: 650px) {
 /*    #topper h1 { font-size:28px; line-height:56px; margin-left:15px; float:left; }*/
-    #topper #about { width:150px; font-size:14px; }
+    #topper #about { width:164px; font-size:14px; }
 }
 
-@media (min-width: 960px) {
-    #topper { display:none; }
-    #legend { display:block; }
+@media (max-width: 959px) {
+    #topper { display:block; }
+    #legend { display:none; }
+    .leaflet-top { top:104px; }
 }
