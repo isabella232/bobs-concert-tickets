@@ -1,4 +1,7 @@
 $(function() {
+    var $nav = $('#nav');
+    var $topper = $('#topper');
+
     var MAX_X = 8550;
     var MAX_Y = 5768;
     var MIN_ZOOM = 0;
@@ -7,21 +10,35 @@ $(function() {
 
     function xy(x, y) {
         /*
-         * Convert pixel coords into psuedo-lat-lng.
+         * Convert image-space pixel coords into map-space pseudo-lat-lng coords.
          */
         return new L.LatLng(-y * COORDINATE_MULTIPLIER, x * COORDINATE_MULTIPLIER);
     }
 
+    var MIN_COORDS = new L.LatLng(0, 0);
+    var CENTER_COORDS = xy(4275, 2884);
+    var MAX_COORDS = xy(MAX_X, MAX_Y); 
+
     var superzoom = L.map('superzoom', {
-        center: xy(4275, 2884),
-        zoom: MIN_ZOOM,
         minZoom: MIN_ZOOM,
         maxZoom: MAX_ZOOM,
-        maxBounds: new L.LatLngBounds(xy(0, 0), xy(MAX_X, MAX_Y)),
+        maxBounds: new L.LatLngBounds(MIN_COORDS, MAX_COORDS),
         crs: L.CRS.Simple,
         zoomControl: false,
         attributionControl: false
     });
+
+    function recalculate_map_offset() {
+        /*
+         * Calculates an appropriate map offset to compensate for the header.
+         */
+        var header_height = $nav.height() + $topper.height();
+        var offset = superzoom.unproject(new L.Point(0, -header_height), superzoom.getZoom());
+        superzoom.setMaxBounds(new L.LatLngBounds(offset, MAX_COORDS));
+    }
+
+    superzoom.on('load', recalculate_map_offset);
+    superzoom.on('zoomend', recalculate_map_offset);
 
     var zoom_control = new L.Control.Zoom({
         position: 'topright'
@@ -44,4 +61,7 @@ $(function() {
     $('#goto').click(function() {
         superzoom.setView(xy(6597, 1083), 3);
     });
+
+    // Load!
+    superzoom.setView(CENTER_COORDS, MIN_ZOOM);
 });
