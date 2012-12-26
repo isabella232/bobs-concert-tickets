@@ -49,11 +49,11 @@ while zoom >= MIN_ZOOM:
             if not os.path.exists(folder):
                 os.makedirs(folder)
 
-            path = os.path.join(folder, '%i.png' % tile_y)
+            path = os.path.join(folder, '%i.jpg' % tile_y)
 
             print path
 
-            tile.save(path, 'PNG')
+            tile.save(path, 'JPEG')
 
             y += TILE_HEIGHT
         
