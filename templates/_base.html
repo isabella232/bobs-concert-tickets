@@ -30,25 +30,8 @@
 	{{ JS.push('js/console.js') }}
 	{{ JS.push('js/lib/jquery-1.8.3.js') }}
     {{ JS.push('js/lib/modernizr.js') }}
-    {{ JS.push('js/responsive-ad.js') }}
     {% block extra_head_js %}{% endblock extra_head_js %}
     {{ JS.render('js/app-header.min.js') }}
-
-	<script>
-    	AddNamespace('NPR.serverVars');
-	    /* TODO
-		jQuery.extend(NPR.serverVars, {
-	        "storyId": "139482413",
-	        "serverType": "prod",
-	        "DFPtarget": "\/news_election_results;storyid=139482413",
-	        "DFPuserver": "u.npr.org",
-	        "DFPserver": "ad.doubleclick.net",
-	        "DFPnetwork": "n6735",
-	        "DFPsite": "NPR",
-	        "DFPmobile": "NPR"
-	    });
-		*/
-	</script>
 
 	<meta property="og:title" content="Bob's Concert Tickets : NPR Music" />
 	<meta property="og:url" content="http://apps.npr.org/bobs-concert-tickets/" />
