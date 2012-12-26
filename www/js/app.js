@@ -22,11 +22,20 @@ $(function() {
     var superzoom = L.map('superzoom', {
         minZoom: MIN_ZOOM,
         maxZoom: MAX_ZOOM,
-        maxBounds: new L.LatLngBounds(MIN_COORDS, MAX_COORDS),
         crs: L.CRS.Simple,
         zoomControl: false,
         attributionControl: false
     });
+
+    var zoom_control = new L.Control.Zoom({
+        position: 'topright'
+    }).addTo(superzoom);
+
+    var tiles = L.tileLayer('http://{s}.npr.org/bobs-concert-tickets/img/tiles/{z}/{x}/{y}.png', {
+        subdomains: ['apps', 'apps2'],
+        continuousWorld: true,
+        noWrap: true
+    }).addTo(superzoom);
 
     function recalculate_map_offset() {
         /*
@@ -40,17 +49,7 @@ $(function() {
     superzoom.on('load', recalculate_map_offset);
     superzoom.on('zoomend', recalculate_map_offset);
 
-    var zoom_control = new L.Control.Zoom({
-        position: 'topright'
-    }).addTo(superzoom);
-
-    var tiles = L.tileLayer('http://{s}.npr.org/bobs-concert-tickets/img/tiles/{z}/{x}/{y}.png', {
-        subdomains: ['apps', 'apps2'],
-        continuousWorld: true,
-        noWrap: true
-    }).addTo(superzoom);
-
-    $('#about').click(function(){
+   $('#about').click(function(){
         if($('.modal-body').children().length < 1 ) {
             $('.modal h3').text($('.legend-contents .headline').text());
             $('.legend-contents .headline').hide();
