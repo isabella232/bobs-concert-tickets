@@ -57,9 +57,9 @@ $(function() {
         }
     });
 
-    $('#goto').click(function() {
+    /*$('#goto').click(function() {
         superzoom.setView(xy(6597, 1083), 3);
-    });
+    });*/
 
     // Load!
     superzoom.setView(CENTER_COORDS, MIN_ZOOM);
