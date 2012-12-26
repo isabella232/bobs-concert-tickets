@@ -26,43 +26,38 @@
 
     <div id="nav">
         <ul class="site-links">
-            <li class="npr"><a href="http://npr.org">&nbsp;</a></li>
-            <li class="news"><a href="http://www.npr.org/sections/news/">News</a></li>
-            <li class="music"><a href="http://www.npr.org/music/">Music</a></li>
-            <li class="donate"><a href="http://www.npr.org/stations/donate/">Donate</a></li>
+            <li class="npr"><a href="http://npr.org"><img src="img/npr_music.png"></a></li>
+            <li class="donate"><a href="http://www.npr.org/stations/donate/">donate</a></li>
         </ul>
         <ul class="social-links">
-            <li><span>Share This Page:</span></li>
-            <li class="twitter"><a rel="external" href="http://twitter.com/share?text=See+all+of+@nprmusic+critic+Bob+Boilen's+concert+tickets+from+2012&amp;hashtags=bobstix&amp;url=http%3A%2F%2Fapps.npr.org%2Fbobs-concert-tickets%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Bob\'s Concert Tickets']);">Share This Page On Twitter</a></li>
-            <li class="facebook"><a rel="external" href="http://www.facebook.com/sharer/sharer.php?t=See+all+of+NPR+Music+critic+Bob+Boilen's+concert+tickets+from+2012&amp;u=http%3A%2F%2Fapps.npr.org%2Fbobs-concert-tickets%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Bob\'s Concert Tickets']);">Like This Page On Facebook</a></li>
+            <li class="twitter"><a rel="external" href="http://twitter.com/share?text=Browse+@nprmusic+critic+Bob+Boilen's+concert+tickets+from+2012&amp;hashtags=bobstix&amp;url=http%3A%2F%2Fapps.npr.org%2Fbobs-concert-tickets%2F" alt="Share on Twitter" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Twitter In Navbar', 'Bob\'s Concert Tickets']);">Share This Page On Twitter</a></li>
+            <li class="facebook"><a rel="external" href="http://www.facebook.com/sharer/sharer.php?t=Browse+NPR+Music+critic+Bob+Boilen's+concert+tickets+from+2012&amp;u=http%3A%2F%2Fapps.npr.org%2Fbobs-concert-tickets%2F" alt="Share on Facebook" target="_blank" onclick="_gaq.push(['_trackEvent', 'Social', 'Click Facebook In Navbar', 'Bob\'s Concert Tickets']);">Like This Page On Facebook</a></li>
         </ul>
     </div>
 
     <div id="topper">
         <h1>Bob's Concert Tickets</h1>
-        <button id="about" class="btn" data-toggle="modal" data-target="#myModal">About this app</button>
+        <button id="about" data-toggle="modal" data-target="#myModal">What is this?</button>
     </div>
 
     <div id="superzoom"></div>
 
     <div id="legend">
         <div class="legend-contents">
-    		<p class="headline">Legendy thing</a>
-    			<p class="chatter">TKTK Chatter chatter</p>
-    		<p class="read-more">Read more: <a href="TKTK">TKTK Story link</a></p>
-    		<p class="byline">
-            By <a href="mailto:cgroskopf@npr.org">Christopher Groskopf</a>, <a href="mailto:bboyer@npr.org">Brian Boyer</a> and <a href="mailto:bboilen@npr.org">Bob Boilen</a> &mdash; December 26, 2012
+            <p class="headline">Bob's Concert Tickets</a>
+            <p class="chatter">TKTK Chatter chatter</p>
+            <p class="read-more">Read more: <a href="TKTK">TKTK Story link</a></p>
+            <p class="byline">
+            by <a href="mailto:cgroskopf@npr.org">Christopher Groskopf</a>, <a href="mailto:bboyer@npr.org">Brian Boyer</a> and <a href="mailto:bboilen@npr.org">Bob Boilen</a> &mdash; December 26, 2012
             </p>
-		</div>
-	</div>
-
-	<div class="modal hide" id="myModal">
-	  <div class="modal-header">
-	    <button type="button" class="close" data-dismiss="modal">X</button>
-	    <h3>About The Map</h3>
-	  </div>
-      <div class="modal-body">
-      </div>
-	</div>
+        </div>
+    </div>
+    <div class="modal hide" id="myModal">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">X</button>
+            <h3></h3>
+        </div>
+        <div class="modal-body"></div>
+    </div>
 
 {% endblock %}
