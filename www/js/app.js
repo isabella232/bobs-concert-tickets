@@ -64,9 +64,10 @@ $(function() {
         }
     });
 
-    /*$('#goto').click(function() {
-        superzoom.setView(xy(6597, 1083), 3);
-    });*/
+    window.superzoom_to = function(x, y, zoom) {
+        superzoom.setView(xy(x, y), zoom);
+        $('.modal').modal('hide');
+    }
 
     // Load!
     superzoom.setView(CENTER_COORDS, MIN_ZOOM);
