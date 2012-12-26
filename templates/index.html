@@ -16,13 +16,6 @@
 
 {% block outer_content %}
 <div id="fb-root"></div>
-    <script>(function(d, s, id) {
-      var js, fjs = d.getElementsByTagName(s)[0];
-      if (d.getElementById(id)) return;
-      js = d.createElement(s); js.id = id;
-      js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
-      fjs.parentNode.insertBefore(js, fjs);
-    }(document, 'script', 'facebook-jssdk'));</script>
 
     <div id="nav">
         <ul class="site-links">
@@ -45,13 +38,14 @@
     <div id="legend">
         <div class="legend-contents">
             <p class="headline">Bob's Concert Tickets</a>
-        <p class="chatter">TKTK Chatter chatter <a href="#" onclick="javascript:superzoom_to(6597, 1083, 3);">Punch Brothers</a></p>
+            <p class="chatter">TKTK Chatter chatter <a href="#" onclick="javascript:superzoom_to(6597, 1083, 3);">Punch Brothers</a></p>
             <p class="read-more">Read more: <a href="TKTK">TKTK Story link</a></p>
             <p class="byline">
             by <a href="mailto:cgroskopf@npr.org">Christopher Groskopf</a>, <a href="mailto:bboyer@npr.org">Brian Boyer</a> and <a href="mailto:bboilen@npr.org">Bob Boilen</a> &mdash; December 26, 2012
             </p>
         </div>
     </div>
+    
     <div class="modal hide" id="myModal">
         <div class="modal-header">
             <button type="button" class="close" data-dismiss="modal"></button>
