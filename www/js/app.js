@@ -42,15 +42,21 @@ $(function() {
         /*
          * Calculates an appropriate map offset to compensate for the header.
          */
-        var header_height = $nav.height() + $topper.height();
+        var header_height = $nav.height();
+        
+        if ($topper.is(':visible')) {
+            header_height += $topper.height();
+        }
+
         var offset = superzoom.unproject(new L.Point(0, -header_height), superzoom.getZoom());
         superzoom.setMaxBounds(new L.LatLngBounds(offset, MAX_COORDS));
     }
 
     superzoom.on('load', recalculate_map_offset);
     superzoom.on('zoomend', recalculate_map_offset);
+    $(window).resize(recalculate_map_offset);
 
-   $('#about').click(function(){
+    $('#about').click(function(){
         if($('.modal-body').children().length < 1 ) {
             $('.modal h3').text($('.legend-contents .headline').text());
             $('.legend-contents .headline').hide();
