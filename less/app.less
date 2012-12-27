@@ -208,15 +208,19 @@ p.desc {background:url('../img/npr_75x25.png') no-repeat center left; padding-le
 @media (max-width: 479px) {
     #nav li.news,#nav li.music,#nav li.donate { display:none; }
     #nav li span { display:none; }
+    #topper h1 { font-size:16px; }
 }
 
 @media (min-width: 650px) {
-/*    #topper h1 { font-size:28px; line-height:56px; margin-left:15px; float:left; }*/
     #topper #about { width:180px; font-size:14px; }
 }
 
-@media (max-width: 959px) {
-    #topper { display:block; }
+@media (max-width: 1024px) {
+    #topper {
+        display:block;
+    }
     #legend { display:none; }
+    #nav ul.site-links li.npr a img { margin-left:12px; }
     .leaflet-top { top:113px; }
+    
 }
