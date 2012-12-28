@@ -2,7 +2,7 @@
 
 import os
 
-PROJECT_NAME = 'bobs-concert-tickets'
+PROJECT_NAME = 'bob-boilens-wristbands-2012'
 DEPLOYED_NAME = PROJECT_NAME 
 
 PRODUCTION_S3_BUCKETS = ['apps.npr.org', 'apps2.npr.org']
