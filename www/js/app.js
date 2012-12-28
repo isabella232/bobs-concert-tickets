@@ -58,7 +58,7 @@ $(function() {
 
     $('#about').click(function(){
         if($('.modal-body').children().length < 1 ) {
-            $('.modal h3').text($('.legend-contents .headline').text());
+            $('.modal h3').html($('.legend-contents .headline').html());
             $('.legend-contents').clone().appendTo('.modal-body');
             $('.modal-body .legend-contents .headline').hide();
         }
