@@ -21,26 +21,6 @@ The project contains the following folders and important files:
 * ``app_config.py`` -- Global project configuration for scripts, deployment, etc.
 * ``fabfile.py`` -- [Fabric](http://docs.fabfile.org/en/latest/) commands automating setup and deployment
 
-Copy the template
------------------
-
-```
-git clone git@github.com:nprapps/app-template.git $NEW_PROJECT_NAME
-cd $NEW_PROJECT_NAME
-rm -rf .git
-git init
-git add *
-git add .gitignore
-git commit -am "Initial import from app-template."
-git remote add origin git@github.com:nprapps/$NEW_PROJECT_NAME.git
-git push -u origin master
-```
-
-Configure the project
----------------------
-
-* Update ``app_config.py`` with the name of the new project.
-
 Install requirements
 --------------------
 
@@ -60,39 +40,18 @@ mkvirtualenv $NEW_PROJECT_NAME
 pip install -r requirements.txt
 ```
 
-Bootstrap your project issues
------------------------------
-
-The app-template can automatically setup your Github repo with our default labels and tickets.
-
-* Run ``fab bootstrap_issues`` and enter your Github username and password.
-
-Generate index.html
--------------------
-
-The app-template ships with several example templates and corresponding views.
-
-* Choose from the available templates which one to base your project on, e.g. ``templates/table.html``. Move this template to ``templates/index.html`` and delete the others.
-* Never edit ``www/index.html`` or other dynamically generated assets. Instead edit the templates.
-* Choose the view from ``app.py`` that matches your chosen index template. Rename it to ``index``, apply the ``@app.route('/')`` decorator to it and delete the others.  
-* Uncomment and update the ad code and Facebook tags at the top of ``templates/_base.html``. (or make yourself a ticket to do it later).
-
-Adding a template/view
-----------------------
-
-A site can have any number of rendered templates (i.e. pages). Each will need a corresponding view. To create a new one:
-
-* Add a template to the ``templates`` directory. Ensure it extends ``_base.html``.
-* Add a corresponding view function to ``app.py``. Decorate it with a route to the page name, i.e. ``@app.route('/filename.html')``
-* By convention only views that end with ``.html`` and do not start with ``_``  will automatically be rendered when you call ``fab render``. 
-
 Generating the tiles
 --------------------
 
 The source image and tiles are not stored in the repository. **Please do not commit them.** To cut the tiles:
 
-* Download the source image from Dropbox and save it as ``data/full.png``
+* Download the source image from Dropbox and save it as ``data/full.png``.
 * Run ``python cut_tiles.py``
+
+Making the full-size download work
+----------------------------------
+
+The full-size image is excluded from the repository by default. To make the download work grab the source image from Dropbox and save it as ``www/img/bobs-concert-tickets-full-size.png``.
 
 Run the project locally
 -----------------------
