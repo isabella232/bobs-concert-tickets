@@ -10,7 +10,7 @@ MIN_ZOOM = 0
 MAX_ZOOM = 4
 
 # Open original image
-full_image = Image.open('data/full.png')
+full_image = Image.open('www/img/bob-boilens-wristbands-2012.png')
 full_width, full_height = full_image.size
 
 zoom = MAX_ZOOM 

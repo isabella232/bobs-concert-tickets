@@ -1,10 +1,5 @@
-nprapps' Project Template
-=========================
-
-About this template
--------------------
-
-This template provides a a project skeleton suitable for any project that is to be served entirely as flat files. Facilities are provided for rendering html from data, compiling LESS into CSS, deploying to S3, etc.
+bobs-concert-tickets
+====================
 
 What's in here?
 ---------------
@@ -48,11 +43,6 @@ The source image and tiles are not stored in the repository. **Please do not com
 * Download the source image from Dropbox and save it as ``data/full.png``.
 * Run ``python cut_tiles.py``
 
-Making the full-size download work
-----------------------------------
-
-The full-size image is excluded from the repository by default. To make the download work grab the source image from Dropbox and save it as ``www/img/bobs-concert-tickets-full-size.png``.
-
 Run the project locally
 -----------------------
 
@@ -93,12 +83,3 @@ Deploy to S3
 ```
 fab staging master deploy
 ```
-
-Deploy to a server
-------------------
-
-The current configuration is for running cron jobs only. Web server configuration is not included.
-
-* In ``fabfile.py`` set ``env.deploy_to_servers`` to ``True``.
-* Run ``fab staging master setup`` to configure the server.
-* Run ``fab staging master deploy`` to deploy the app. 
